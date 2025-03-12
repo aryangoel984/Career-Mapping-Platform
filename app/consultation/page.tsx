@@ -135,65 +135,90 @@ function VideoConsultation() {
 }
 
 function ChatConsultation() {
-  const [messages, setMessages] = useState<{ sender: string; message: string }[]>([
-    { sender: "ai", message: "Hello! I'm your AI career advisor. How can I help you?" },
-  ]);
-  const [input, setInput] = useState("");
-
-  const sendMessage = () => {
-    if (!input.trim()) return;
-
-    const userMessage = { sender: "user", message: input };
-    setMessages((prev) => [...prev, userMessage]);
-    setInput("");
-
-    setTimeout(() => {
-      const botResponse = {
-        sender: "ai",
-        message: "That's an interesting question! Let me analyze it and provide some insights.",
-      };
-      setMessages((prev) => [...prev, botResponse]);
-    }, 1000);
-  };
-
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>AI Chat Consultation</CardTitle>
-        <CardDescription>Chat with our AI career advisor</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ScrollArea className="h-[400px] pr-4">
-          <div className="space-y-4">
-            {messages.map((msg, index) => (
-              <ChatMessage key={index} sender={msg.sender} message={msg.message} />
-            ))}
+    const [messages, setMessages] = useState([
+      { sender: "ai", message: "Hello! I'm your AI career advisor. How can I help you?" },
+    ]);
+    const [input, setInput] = useState("");
+  
+    const sendMessage = async () => {
+      if (!input.trim()) return;
+  
+      const userMessage = { sender: "user", message: input };
+      setMessages((prev) => [...prev, userMessage]);
+      setInput("");
+  
+      try {
+        const response = await fetch("/api/chatbot", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: input }),
+        });
+  
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+  
+        const data = await response.json();
+        const botResponse = { sender: "ai", message: data.reply };
+        setMessages((prev) => [...prev, botResponse]);
+      } catch (error) {
+        console.error("Error fetching AI response:", error);
+        const errorMessage = {
+          sender: "ai",
+          message: "I'm sorry, but I couldn't process your request at this time.",
+        };
+        setMessages((prev) => [...prev, errorMessage]);
+      }
+    };
+  
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>AI Chat Consultation</CardTitle>
+          <CardDescription>Chat with our AI career advisor</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ScrollArea className="h-[400px] pr-4">
+            <div className="space-y-4">
+              {messages.map((msg, index) => (
+                <ChatMessage key={index} sender={msg.sender} message={msg.message} />
+              ))}
+            </div>
+          </ScrollArea>
+        </CardContent>
+        <CardFooter>
+          <div className="flex w-full items-center space-x-2">
+            <Input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Type your message..."
+            />
+            <Button size="icon" onClick={sendMessage}>
+              Send
+            </Button>
           </div>
-        </ScrollArea>
-      </CardContent>
-      <CardFooter>
-        <div className="flex w-full items-center space-x-2">
-          <Input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type your message..." />
-          <Button size="icon" onClick={sendMessage}>
-            <Send className="h-4 w-4" />
-          </Button>
-        </div>
-      </CardFooter>
-    </Card>
-  );
-}
-
-function ChatMessage({ sender, message }: { sender: string; message: string }) {
-  return (
-    <div className={`flex ${sender === "user" ? "justify-end" : "justify-start"}`}>
-      <div className={`flex gap-3 max-w-[80%] ${sender === "user" ? "flex-row-reverse" : ""}`}>
-        <Avatar className={sender === "ai" ? "bg-purple-100" : "bg-blue-100"}>
-          <AvatarFallback>{sender === "ai" ? "AI" : "You"}</AvatarFallback>
-        </Avatar>
-        <div className={`rounded-lg p-3 ${sender === "ai" ? "bg-muted" : "bg-primary text-primary-foreground"}`}>
-          <p className="text-sm">{message}</p>
+        </CardFooter>
+      </Card>
+    );
+  }
+  
+  function ChatMessage({ sender, message }) {
+    return (
+      <div className={`flex ${sender === "user" ? "justify-end" : "justify-start"}`}>
+        <div className={`flex gap-3 max-w-[80%] ${sender === "user" ? "flex-row-reverse" : ""}`}>
+          <Avatar className={sender === "ai" ? "bg-purple-100" : "bg-blue-100"}>
+            <AvatarFallback>{sender === "ai" ? "AI" : "You"}</AvatarFallback>
+          </Avatar>
+          <div
+            className={`rounded-lg p-3 ${
+              sender === "ai" ? "bg-muted" : "bg-primary text-primary-foreground"
+            }`}
+          >
+            <p className="text-sm">{message}</p>
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }

@@ -1,3 +1,4 @@
+"use client"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
@@ -41,33 +42,33 @@ export default function InsightsPage() {
             <MarketInsightCard
               title="Fastest Growing Roles"
               insights={[
-                "Data Scientists (+35%)",
-                "DevOps Engineers (+28%)",
-                "Full Stack Developers (+22%)",
-                "AI/ML Engineers (+40%)",
-                "Cloud Architects (+30%)",
+                "AI/ML Engineers (+42.3% YoY)",
+                "Cloud Security Specialists (+37.8% YoY)",
+                "DevOps/Platform Engineers (+31.5% YoY)",
+                "Data Scientists (+29.2% YoY)",
+                "Blockchain Developers (+26.7% YoY)",
               ]}
             />
 
             <MarketInsightCard
               title="Most In-Demand Skills"
               insights={[
-                "Cloud Computing (AWS, Azure)",
-                "AI/Machine Learning",
-                "React & Modern JavaScript",
-                "DevOps & CI/CD",
-                "Data Analysis & Visualization",
+                "Generative AI & LLM Engineering",
+                "Kubernetes & Container Orchestration",
+                "React, Next.js & Modern Frontend",
+                "Cloud Architecture (AWS, Azure, GCP)",
+                "Data Engineering & Analytics",
               ]}
             />
 
             <MarketInsightCard
               title="Industry Growth Sectors"
               insights={[
-                "Healthcare Tech (+32%)",
-                "FinTech (+28%)",
-                "E-commerce (+25%)",
-                "EdTech (+30%)",
-                "Cybersecurity (+35%)",
+                "Healthcare Tech (+34.7% hiring volume)",
+                "Cybersecurity (+33.2% hiring volume)",
+                "FinTech (+29.5% hiring volume)",
+                "Sustainable Tech (+27.8% hiring volume)",
+                "EdTech (+24.3% hiring volume)",
               ]}
             />
           </div>
@@ -97,32 +98,34 @@ export default function InsightsPage() {
                   <div>
                     <h3 className="font-medium mb-2">Location</h3>
                     <p className="text-sm text-muted-foreground">
-                      Tech hubs like San Francisco, New York, and Seattle offer 30-50% higher salaries than other
-                      regions, though remote work is narrowing this gap.
+                      San Francisco leads with a median of $175,800 for senior roles, followed by New York ($162,400)
+                      and Seattle ($158,700). Remote roles average 15-20% lower but are steadily increasing.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="font-medium mb-2">Experience Level</h3>
                     <p className="text-sm text-muted-foreground">
-                      Senior developers (5+ years) typically earn 70-100% more than entry-level positions, with the
-                      steepest growth occurring between 2-5 years.
+                      Entry-level developers average $87,300, mid-level (3-5 years) reach $124,600, and senior (6+
+                      years) average $152,800. The most significant jump occurs between 2-4 years of experience.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="font-medium mb-2">Company Size</h3>
                     <p className="text-sm text-muted-foreground">
-                      Large tech companies often pay 20-30% more than startups, though startups may offer equity
-                      compensation that can be valuable long-term.
+                      FAANG and top-tier tech companies pay 28.5% above market rate, mid-size tech firms average 5-10%
+                      above market, while early-stage startups typically offer 10-15% below market with equity
+                      compensation.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="font-medium mb-2">Specialized Skills</h3>
                     <p className="text-sm text-muted-foreground">
-                      Specialized skills in AI, cybersecurity, and cloud architecture can command 15-25% salary premiums
-                      over general development roles.
+                      AI/ML specialists command a 24.7% premium, cybersecurity experts 21.3%, and cloud architects
+                      18.9%. Full-stack developers with specialized framework experience earn 12.5% more than their
+                      peers.
                     </p>
                   </div>
                 </div>
@@ -139,32 +142,32 @@ export default function InsightsPage() {
                   <div>
                     <h3 className="font-medium mb-2">Research Market Rates</h3>
                     <p className="text-sm text-muted-foreground">
-                      Use platforms like Glassdoor, Levels.fyi, and Blind to research salary ranges for your specific
-                      role, location, and experience level.
+                      Combine data from Levels.fyi, Glassdoor, and Blind with recent offer data from your network. Aim
+                      for the 75th percentile of the salary range for your role and location.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="font-medium mb-2">Highlight Specialized Skills</h3>
                     <p className="text-sm text-muted-foreground">
-                      Emphasize in-demand skills and quantifiable achievements that demonstrate your value beyond the
-                      basic job requirements.
+                      Quantify your impact with metrics (e.g., "Reduced API response time by 42%") and emphasize skills
+                      that match the company's current technical challenges or roadmap.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="font-medium mb-2">Consider Total Compensation</h3>
                     <p className="text-sm text-muted-foreground">
-                      Evaluate the full package including base salary, bonuses, equity, benefits, and work-life balance
-                      factors.
+                      Evaluate RSUs, stock options, bonuses, benefits (worth $15K-$30K annually), and work flexibility.
+                      Request a compensation breakdown with 4-year projections.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="font-medium mb-2">Practice Your Pitch</h3>
                     <p className="text-sm text-muted-foreground">
-                      Prepare specific examples of your impact and practice articulating your value proposition
-                      confidently.
+                      Prepare 3-5 specific examples of your highest-impact work with quantifiable results. Practice with
+                      a peer and prepare responses for common objections.
                     </p>
                   </div>
                 </div>
@@ -194,11 +197,11 @@ export default function InsightsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <TechTrendItem name="WebAssembly" growth="+120%" />
-                  <TechTrendItem name="Rust" growth="+85%" />
-                  <TechTrendItem name="GraphQL" growth="+65%" />
-                  <TechTrendItem name="Kubernetes" growth="+60%" />
-                  <TechTrendItem name="Next.js" growth="+55%" />
+                  <TechTrendItem name="AI/ML Frameworks" growth="+143.2%" />
+                  <TechTrendItem name="Rust" growth="+89.7%" />
+                  <TechTrendItem name="WebAssembly" growth="+76.5%" />
+                  <TechTrendItem name="Next.js" growth="+68.3%" />
+                  <TechTrendItem name="Kubernetes" growth="+52.9%" />
                 </div>
               </CardContent>
             </Card>
@@ -210,11 +213,11 @@ export default function InsightsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <TechTrendItem name="JavaScript" growth="+10%" />
-                  <TechTrendItem name="Python" growth="+15%" />
-                  <TechTrendItem name="React" growth="+12%" />
-                  <TechTrendItem name="AWS" growth="+18%" />
-                  <TechTrendItem name="SQL" growth="+5%" />
+                  <TechTrendItem name="Python" growth="+18.7%" />
+                  <TechTrendItem name="React" growth="+15.3%" />
+                  <TechTrendItem name="TypeScript" growth="+14.9%" />
+                  <TechTrendItem name="AWS" growth="+12.6%" />
+                  <TechTrendItem name="Node.js" growth="+8.4%" />
                 </div>
               </CardContent>
             </Card>
@@ -226,11 +229,11 @@ export default function InsightsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <TechTrendItem name="jQuery" growth="-30%" />
-                  <TechTrendItem name="PHP" growth="-15%" />
-                  <TechTrendItem name="Angular.js" growth="-25%" />
-                  <TechTrendItem name="CoffeeScript" growth="-40%" />
-                  <TechTrendItem name="Flash" growth="-95%" />
+                  <TechTrendItem name="jQuery" growth="-37.8%" />
+                  <TechTrendItem name="Angular.js (v1)" growth="-32.5%" />
+                  <TechTrendItem name="CoffeeScript" growth="-45.2%" />
+                  <TechTrendItem name="Backbone.js" growth="-53.7%" />
+                  <TechTrendItem name="Flash" growth="-98.3%" />
                 </div>
               </CardContent>
             </Card>
@@ -261,31 +264,35 @@ export default function InsightsPage() {
                   <div className="flex items-start gap-2">
                     <Badge className="mt-0.5">Flexibility</Badge>
                     <p className="text-sm text-muted-foreground">
-                      Control over work hours and environment, leading to better work-life balance
+                      87% of developers report improved work-life balance with flexible schedules, saving an average of
+                      1.2 hours daily
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
                     <Badge className="mt-0.5">No Commute</Badge>
                     <p className="text-sm text-muted-foreground">
-                      Save time and reduce stress by eliminating daily commutes
+                      Average savings of $4,650 annually on commuting costs and 240 hours of travel time per year
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
                     <Badge className="mt-0.5">Global Opportunities</Badge>
                     <p className="text-sm text-muted-foreground">
-                      Access to jobs worldwide, not limited by geographic location
+                      42% increase in international hiring for remote tech roles since 2021, with 68% higher application
+                      rates
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
                     <Badge className="mt-0.5">Cost Savings</Badge>
                     <p className="text-sm text-muted-foreground">
-                      Reduced expenses on commuting, work attire, and meals
+                      Remote workers save $6,000-$12,000 annually on work-related expenses including meals, clothing,
+                      and transportation
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
                     <Badge className="mt-0.5">Productivity</Badge>
                     <p className="text-sm text-muted-foreground">
-                      Many report higher productivity with fewer office distractions
+                      71% of developers report higher productivity, with an average 13% increase in output for complex
+                      coding tasks
                     </p>
                   </div>
                 </div>
@@ -304,7 +311,8 @@ export default function InsightsPage() {
                       Isolation
                     </Badge>
                     <p className="text-sm text-muted-foreground">
-                      Reduced social interaction and potential feelings of loneliness
+                      65% of remote developers report feelings of isolation at least once weekly, with 38% citing it as
+                      their biggest challenge
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
@@ -312,7 +320,8 @@ export default function InsightsPage() {
                       Communication
                     </Badge>
                     <p className="text-sm text-muted-foreground">
-                      More effort required for clear communication and collaboration
+                      Teams spend 32% more time in coordination activities, with asynchronous communication adding 4-24
+                      hours to resolution times
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
@@ -320,7 +329,8 @@ export default function InsightsPage() {
                       Work-Life Boundaries
                     </Badge>
                     <p className="text-sm text-muted-foreground">
-                      Difficulty separating work and personal life when working from home
+                      52% report working longer hours remotely, with an average of 2.5 additional hours per week
+                      compared to office-based peers
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
@@ -328,7 +338,8 @@ export default function InsightsPage() {
                       Career Visibility
                     </Badge>
                     <p className="text-sm text-muted-foreground">
-                      Potential challenges in getting recognition and advancement
+                      Remote workers are 38% less likely to receive promotions within the first year compared to
+                      in-office counterparts
                     </p>
                   </div>
                   <div className="flex items-start gap-2">
@@ -336,7 +347,8 @@ export default function InsightsPage() {
                       Self-Discipline
                     </Badge>
                     <p className="text-sm text-muted-foreground">
-                      Requires strong self-management and focus without supervision
+                      47% struggle with maintaining focus at home, with distractions causing an average of 27 minutes of
+                      lost productivity daily
                     </p>
                   </div>
                 </div>
@@ -355,19 +367,19 @@ export default function InsightsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <ReportCard
               title="2024 Tech Salary Guide"
-              description="Comprehensive salary data across roles, experience levels, and locations"
+              description="Comprehensive salary data across roles, experience levels, and locations with 5-year projections"
               date="January 2024"
             />
 
             <ReportCard
               title="Emerging Tech Trends"
-              description="Analysis of emerging technologies and their impact on the job market"
+              description="In-depth analysis of emerging technologies and their projected impact on hiring and skill demands"
               date="March 2024"
             />
 
             <ReportCard
               title="Future of Work Report"
-              description="Insights on remote work, hybrid models, and workplace evolution"
+              description="Research-backed insights on remote work, hybrid models, and the evolution of tech workplaces"
               date="February 2024"
             />
           </div>
@@ -413,6 +425,21 @@ function TechTrendItem({ name, growth }) {
 }
 
 function ReportCard({ title, description, date }) {
+  const handleDownload = () => {
+    // Create the PDF file name based on the title
+    const fileName = title.toLowerCase().replace(/\s+/g, "-") + ".pdf"
+
+    // Create a link to the PDF file
+    const link = document.createElement("a")
+    link.href = `/reports/${fileName}`
+    link.setAttribute("download", fileName)
+
+    // Append to the body, click, and remove
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <Card>
       <CardHeader>
@@ -421,7 +448,7 @@ function ReportCard({ title, description, date }) {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground mb-4">{description}</p>
-        <Button className="w-full">
+        <Button className="w-full" onClick={handleDownload}>
           <Download className="mr-2 h-4 w-4" />
           Download Report
         </Button>

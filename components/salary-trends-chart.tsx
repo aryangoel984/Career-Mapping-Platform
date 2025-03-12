@@ -12,47 +12,49 @@ import {
 } from "@/components/ui/chart"
 
 const data = [
-  {
-    year: "2020",
-    "Frontend Developer": 75000,
-    "Backend Developer": 80000,
-    "Full Stack Developer": 85000,
-    "Data Scientist": 90000,
-    "DevOps Engineer": 88000,
-  },
-  {
-    year: "2021",
-    "Frontend Developer": 82000,
-    "Backend Developer": 87000,
-    "Full Stack Developer": 93000,
-    "Data Scientist": 100000,
-    "DevOps Engineer": 97000,
-  },
-  {
-    year: "2022",
-    "Frontend Developer": 90000,
-    "Backend Developer": 95000,
-    "Full Stack Developer": 102000,
-    "Data Scientist": 112000,
-    "DevOps Engineer": 108000,
-  },
-  {
-    year: "2023",
-    "Frontend Developer": 98000,
-    "Backend Developer": 105000,
-    "Full Stack Developer": 112000,
-    "Data Scientist": 125000,
-    "DevOps Engineer": 120000,
-  },
-  {
-    year: "2024",
-    "Frontend Developer": 105000,
-    "Backend Developer": 115000,
-    "Full Stack Developer": 125000,
-    "Data Scientist": 140000,
-    "DevOps Engineer": 135000,
-  },
-]
+    {
+      year: "2020",
+      "Frontend Developer": 50000,
+      "Backend Developer": 60000,
+      "Full Stack Developer": 100000,
+      "Data Scientist": 30000,
+      "DevOps Engineer": 88000,
+    },
+    {
+      year: "2021",
+      "Frontend Developer": 43000,
+      "Backend Developer": 83000,
+      "Full Stack Developer": 88000,
+      "Data Scientist": 64000,
+      "DevOps Engineer": 52000,
+    },
+    {
+      year: "2022",
+      "Frontend Developer": 78000,
+      "Backend Developer": 86000,
+      "Full Stack Developer": 91000,
+      "Data Scientist": 98000,
+      "DevOps Engineer": 94000,
+    },
+    {
+      year: "2023",
+      "Frontend Developer": 54000,
+      "Backend Developer": 65000,
+      "Full Stack Developer": 24000,
+      "Data Scientist": 62000,
+      "DevOps Engineer": 87000,
+    },
+    {
+      year: "2024",
+      "Frontend Developer": 91000,
+      "Backend Developer": 82000,
+      "Full Stack Developer": 98000,
+      "Data Scientist": 106000,
+      "DevOps Engineer": 100000,
+    },
+  ];
+  
+  
 
 export default function SalaryTrendsChart() {
   return (
